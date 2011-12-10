@@ -18,7 +18,7 @@ The JavaDocs can be generated from Maven by
 
 	mvn javadoc:javadoc
 
-The documentation is written to `target\site\apidocs`.
+The documentation is written to `target/site/apidocs`.
 
 ## License
 
