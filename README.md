@@ -27,5 +27,6 @@ Distributed under the [GNU General Public License][gpl].
 Copyright (C) 2011 Nick Rothwell.
 
 [max]: http://cycling74.com/products/max/
+[lib]: https://github.com/cassiel/net.loadbang.lib
 [osc]: http://opensoundcontrol.org/
 [gpl]: http://www.gnu.org/copyleft/gpl.html
