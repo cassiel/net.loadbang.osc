@@ -20,11 +20,23 @@ abstract public class UDPReceiver extends IPReceiver {
     public UDPReceiver(int port) {
 		super(port);
 	}
+    
+    /** UDP receiver with unspecified port. When we open, the port is
+     	lifted from the socket. */
+
+    public UDPReceiver() {
+    	this(0);
+    }
 
     @Override
     public void open() throws CommsException {
     	try {
-    		itsOscSocket00 = new DatagramSocket(getPort());
+    		if (getPort() == 0) {
+        		itsOscSocket00 = new DatagramSocket();
+    			setPort(itsOscSocket00.getLocalPort());
+    		} else {
+    			itsOscSocket00 = new DatagramSocket(getPort());
+    		}
     	} catch (SocketException e) {
     		throw new CommsException("open", e);
     	}

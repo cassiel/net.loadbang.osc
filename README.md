@@ -16,7 +16,7 @@ See the README for [net.loadbang.lib][lib] for installation details.
 
 The JavaDocs can be generated from Maven by
 
-	mvn javadoc:javadoc
+        mvn javadoc:javadoc
 
 The documentation is written to `target/site/apidocs`.
 
@@ -24,7 +24,7 @@ The documentation is written to `target/site/apidocs`.
 
 Distributed under the [GNU General Public License][gpl].
 
-Copyright (C) 2011 Nick Rothwell.
+Copyright (C) 2013 Nick Rothwell.
 
 [max]: http://cycling74.com/products/max/
 [lib]: https://github.com/cassiel/net.loadbang.lib
