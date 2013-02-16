@@ -7,7 +7,7 @@
 
   <groupId>net.loadbang</groupId>
   <artifactId>net.loadbang.osc</artifactId>
-  <version>1.4.0</version>
+  <version>1.4.2</version>
   <packaging>jar</packaging>
 
   <name>net.loadbang.osc</name>
@@ -20,7 +20,14 @@
     <dependency>
       <groupId>net.loadbang</groupId>
       <artifactId>net.loadbang.lib</artifactId>
-      <version>1.8.0</version>
+      <version>1.9.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.cycling74</groupId>
+      <artifactId>com.cycling74.max</artifactId>
+      <version>5.1.9</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
