@@ -3,6 +3,7 @@
 
 package net.loadbang.osc;
 
+import java.net.InetSocketAddress;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class PacketProcessor implements PacketConsumer {
 		itsMessageConsumer = messageConsumer;
 	}
 	
-	public void consumePacket(byte[] packet) throws DataException {
+	public void consumePacket(InetSocketAddress source, byte[] packet) throws DataException {
 		try {
 			ByteBuffer buff = ByteBuffer.wrap(packet);
 			Element elem = parse(buff);
@@ -36,7 +37,7 @@ public class PacketProcessor implements PacketConsumer {
 			elem.getMessages(null, l);
 			
 			for (Pair<Date, Message> msgs: l) {
-				itsMessageConsumer.consumeMessage(msgs.getFst(), msgs.getSnd());
+				itsMessageConsumer.consumeMessage(source, msgs.getFst(), msgs.getSnd());
 			}
 		} catch (BufferUnderflowException exn) {
 			throw new DataException("buffer underflow", exn);

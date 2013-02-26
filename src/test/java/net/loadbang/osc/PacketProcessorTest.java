@@ -22,12 +22,13 @@ public class PacketProcessorTest {
 		final MessageConsumer mc = itsContext.mock(MessageConsumer.class);
 
 		itsContext.checking(new Expectations() {{
-			one(mc).consumeMessage(null, new Message("/I").addInteger(37));
+			one(mc).consumeMessage(null, null, new Message("/I").addInteger(37));
 		}});
 
 		PacketProcessor processor = new PacketProcessor(mc);
 		
 		processor.consumePacket(
+			null,
 			FormattingHelper.makeByteArray(
 				'/', 'I', 0, 0,
 				',', 'i', 0, 0,
@@ -47,6 +48,7 @@ public class PacketProcessorTest {
 		
 		try {
 			processor.consumePacket(
+				null,
 				FormattingHelper.makeByteArray(
 					'/', 'I', 0, 0,
 					',', 'i', 0, 0
@@ -70,6 +72,7 @@ public class PacketProcessorTest {
 		
 		try {
 			processor.consumePacket(
+				null,
 				FormattingHelper.makeByteArray(
 					'/', 'I', 0, 0,
 					',', 'i', 0, 0,
@@ -95,6 +98,7 @@ public class PacketProcessorTest {
 		PacketProcessor processor = new PacketProcessor(mc);
 		
 		processor.consumePacket(
+			null,
 			FormattingHelper.makeByteArray(
 				'/', 'I', 0, 0,
 				0, 0, 0, 37
@@ -113,6 +117,7 @@ public class PacketProcessorTest {
 		PacketProcessor processor = new PacketProcessor(mc);
 		
 		processor.consumePacket(
+			null,
 			FormattingHelper.makeByteArray(
 				'/', 's', 't', 0,
 				',', ',', 'X', 0
@@ -125,12 +130,13 @@ public class PacketProcessorTest {
 		final MessageConsumer mc = itsContext.mock(MessageConsumer.class);
 
 		itsContext.checking(new Expectations() {{
-			one(mc).consumeMessage(null, new Message("/I").addInteger(37));
+			one(mc).consumeMessage(null, null, new Message("/I").addInteger(37));
 		}});
 
 		PacketProcessor processor = new PacketProcessor(mc);
 		
 		processor.consumePacket(
+			null,
 			FormattingHelper.makeByteArray(
 				'#', 'b', 'u', 'n', 'd', 'l', 'e', 0,
 				 0, 0, 0, 0, 0, 0, 0, 1,			//	Time-tag: now()
@@ -147,10 +153,10 @@ public class PacketProcessorTest {
 		final MessageConsumer mc = itsContext.mock(MessageConsumer.class);
 
 		itsContext.checking(new Expectations() {{
-			one(mc).consumeMessage(null,
+			one(mc).consumeMessage(null, null,
 								   new Message("/mess1").addInteger(37).addString("foo")
 								  );
-			one(mc).consumeMessage(null,
+			one(mc).consumeMessage(null, null,
 					   			   new Message("/mess2").addString("X").addString("YYYY").addString("ZZZ")
 					  			  );
 		}});
@@ -158,6 +164,7 @@ public class PacketProcessorTest {
 		PacketProcessor processor = new PacketProcessor(mc);
 		
 		processor.consumePacket(
+			null,
 			FormattingHelper.makeByteArray(
 				'#', 'b', 'u', 'n', 'd', 'l', 'e', 0,
 				 0, 0, 0, 0, 0, 0, 0, 1,			//	Time-tag: now()
@@ -183,12 +190,13 @@ public class PacketProcessorTest {
 		final MessageConsumer mc = itsContext.mock(MessageConsumer.class);
 
 		itsContext.checking(new Expectations() {{
-			one(mc).consumeMessage(null, new Message("/mess1"));
+			one(mc).consumeMessage(null, null, new Message("/mess1"));
 		}});
 
 		PacketProcessor processor = new PacketProcessor(mc);
 		
 		processor.consumePacket(
+			null,
 			FormattingHelper.makeByteArray(
 				'#', 'b', 'u', 'n', 'd', 'l', 'e', 0,
 				 0, 0, 0, 0, 0, 0, 0, 1,			//	Time-tag: now()

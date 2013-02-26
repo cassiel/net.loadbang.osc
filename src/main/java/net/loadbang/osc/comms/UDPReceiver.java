@@ -6,6 +6,7 @@ package net.loadbang.osc.comms;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.InetSocketAddress;
 import java.net.SocketException;
 import java.nio.ByteBuffer;
 
@@ -71,7 +72,7 @@ abstract public class UDPReceiver extends IPReceiver {
 
 			byte[] buff = new byte[dp.getLength()];
 			ByteBuffer.wrap(datagram).get(buff);
-			receivePacket(buff);
+			receivePacket((InetSocketAddress) dp.getSocketAddress(), buff);
 		}
 	}
 }

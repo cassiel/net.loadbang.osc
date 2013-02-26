@@ -6,8 +6,10 @@ package net.loadbang.osc.comms;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketAddress;
 import java.net.SocketException;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.SynchronousQueue;
@@ -15,6 +17,7 @@ import java.util.concurrent.SynchronousQueue;
 import net.loadbang.osc.exn.CommsException;
 import net.loadbang.osc.exn.DataException;
 import net.loadbang.osc.exn.SetupException;
+import net.loadbang.util.Pair;
 
 /**	OSC packet receiver which operates over TCP/IP. */
 
@@ -25,11 +28,11 @@ abstract public class TCPReceiver extends IPReceiver implements Runnable {
 	//	thread in order to service the socket, and so we synchronise via a single buffer.
 	//	Each entry is a complete packet (Message or Bundle), as bytes.
 	
-	private BlockingQueue<byte[]> itsNextMessage;
+	private BlockingQueue<Pair<InetSocketAddress, byte[]>> itsNextMessage;
 	
     public TCPReceiver(int port) {
 		super(port);
-		itsNextMessage = new SynchronousQueue<byte[]>();
+		itsNextMessage = new SynchronousQueue<Pair<InetSocketAddress, byte[]>>();
 	}
 
     @Override
@@ -57,7 +60,8 @@ abstract public class TCPReceiver extends IPReceiver implements Runnable {
 			throw new SetupException("socket not open");
     	} else {
     		try {
-				receivePacket(itsNextMessage.take());
+				Pair<InetSocketAddress, byte[]> take = itsNextMessage.take();
+				receivePacket(take.getFst(), take.getSnd());
 			} catch (InterruptedException e) {
 				throw new CommsException("interrupted", e);
 			}
@@ -78,6 +82,7 @@ abstract public class TCPReceiver extends IPReceiver implements Runnable {
 	/**	Launch a thread to service a newly-connected client. */
 
 	private void service(Socket socket) throws IOException {
+		final InetSocketAddress remote = (InetSocketAddress) socket.getRemoteSocketAddress();
 		InputStream is = socket.getInputStream();
 		final DataInputStream ds = new DataInputStream(is);
 
@@ -89,7 +94,7 @@ abstract public class TCPReceiver extends IPReceiver implements Runnable {
 						bytes = ds.readInt();
 						byte b[] = new byte[bytes];
 						ds.readFully(b);
-						itsNextMessage.put(b);
+						itsNextMessage.put(new Pair<InetSocketAddress, byte[]>(remote, b));
 					}
 				} catch (IOException e) {
 				} catch (InterruptedException e) {
