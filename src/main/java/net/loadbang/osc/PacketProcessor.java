@@ -16,7 +16,7 @@ import net.loadbang.osc.data.Message;
 import net.loadbang.osc.exn.DataException;
 import net.loadbang.osc.util.Manifest;
 import net.loadbang.osc.util.Timing;
-import net.loadbang.util.Pair;
+import net.loadbang.pico.util.Pair;
 
 /**	A packet consumer which parses packets and passes them into a message consumer. */
 

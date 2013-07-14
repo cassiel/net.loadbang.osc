@@ -9,7 +9,6 @@ import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketAddress;
 import java.net.SocketException;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.SynchronousQueue;
@@ -17,7 +16,7 @@ import java.util.concurrent.SynchronousQueue;
 import net.loadbang.osc.exn.CommsException;
 import net.loadbang.osc.exn.DataException;
 import net.loadbang.osc.exn.SetupException;
-import net.loadbang.util.Pair;
+import net.loadbang.pico.util.Pair;
 
 /**	OSC packet receiver which operates over TCP/IP. */
 

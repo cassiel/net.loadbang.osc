@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 import net.loadbang.osc.util.Formatter;
-import net.loadbang.util.Pair;
+import net.loadbang.pico.util.Pair;
 
 /**	A generic OSC element, which may either be a message or a bundle. (This
  	roughly corresponds to the OSC specification.) An element can be rendered

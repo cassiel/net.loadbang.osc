@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Vector;
 
 import net.loadbang.osc.util.Formatter;
-import net.loadbang.util.Pair;
+import net.loadbang.pico.util.Pair;
 
 /**	An OSC message (as opposed to a bundle).
 

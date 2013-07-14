@@ -17,7 +17,7 @@ import java.util.Vector;
 import net.loadbang.osc.util.Formatter;
 import net.loadbang.osc.util.Manifest;
 import net.loadbang.osc.util.Timing;
-import net.loadbang.util.Pair;
+import net.loadbang.pico.util.Pair;
 
 public class Bundle extends Element {
 	/**	The timestamp of this bundle. */
