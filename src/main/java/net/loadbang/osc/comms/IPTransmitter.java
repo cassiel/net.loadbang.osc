@@ -4,7 +4,6 @@
 package net.loadbang.osc.comms;
 
 import java.net.InetAddress;
-import net.loadbang.osc.exn.CommsException;
 
 /**	An OSC transmitter using IP. It has an outgoing host and port.
 
