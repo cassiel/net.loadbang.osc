@@ -7,7 +7,7 @@ packages. It is missing some features (specifically, wildcard matching
 of paths, and timestamping), but it does implement OSC-over-TCP as
 well as the more usual OSC-over-UDP.
 
-`net.loadbang.osc` and it dependencies are available in the Maven repo:
+`net.loadbang.osc` and its dependencies are available in the central Maven repo:
 
 - leiningen:
 
