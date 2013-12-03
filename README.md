@@ -7,12 +7,19 @@ packages. It is missing some features (specifically, wildcard matching
 of paths, and timestamping), but it does implement OSC-over-TCP as
 well as the more usual OSC-over-UDP.
 
-The prebuilt JAR files are in the sub-directory `distribution`, or the
-library can be built from the enclosed sources using Maven. (For the
-Maven build, clone and build [net.loadbang.lib][lib] first, since our
-libraries are not yet in a central repository.)
+`net.loadbang.osc` and it dependencies are available in the Maven repo:
 
-See the README for [net.loadbang.lib][lib] for installation details.
+- leiningen:
+
+        [net.loadbang/net.loadbang.osc "1.6.1"]
+
+- maven:
+
+        <dependency>
+          <groupId>net.loadbang</groupId>
+          <artifactId>net.loadbang.osc</artifactId>
+          <version>1.6.1</version>
+        </dependency>
 
 ## Documentation
 

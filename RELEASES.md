@@ -1,5 +1,9 @@
 `-*- word-wrap: t; -*-`
 
+## (1.6.1,) 2013-12-03:
+
+Fixes to `pom.xml` to get the project into the central Maven repo. Also added to Travis CI.
+
 ## 1.6.1, 2013-10-28:
 
 Dependency bump: `net.loadbang.picolib` `1.0.0`.
