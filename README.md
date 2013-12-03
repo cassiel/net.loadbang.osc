@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/cassiel/net.loadbang.osc.png)](http://travis-ci.org/cassiel/net.loadbang.osc)
+
 # net.loadbang.osc
 
 This is a simple [OSC][osc] library used by our [MaxMSP][max]
