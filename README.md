@@ -7,7 +7,7 @@ but it does implement OSC-over-TCP as well as the more usual
 OSC-over-UDP.
 
 For a Clojure-friendly wrapper to this package, see the lower-level parts of
-`[monome-fu](https://github.com/cassiel/monome-fu)`.
+[`monome-fu`](https://github.com/cassiel/monome-fu).
 
 `net.loadbang.osc` and its dependencies are available in the central Maven repo:
 
