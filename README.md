@@ -1,4 +1,4 @@
-# `net.loadbang.osc` [![Build Status](https://secure.travis-ci.org/cassiel/net.loadbang.osc.png)](http://travis-ci.org/cassiel/net.loadbang.osc)
+# `net.loadbang.osc` [![Build Status](https://secure.travis-ci.org/cassiel/net.loadbang.osc.png)](http://travis-ci.org/cassiel/net.loadbang.osc) [![Dependency Status](https://www.versioneye.com/user/projects/52e4ddccec1375b57600002a/badge.png)](https://www.versioneye.com/user/projects/52e4ddccec1375b57600002a)
 
 This is a simple [OSC][osc] library used by our [MaxMSP][max] packages,
 and elsewhere (such as directly from Clojure). It is missing some
