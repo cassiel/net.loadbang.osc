@@ -2,7 +2,7 @@
 
 ## 1.6.2, 2015-06-09:
 
-Bumped dependencies.
+Bumped dependencies. JavaDoc fix. Modernised `pom.xml` for latest Maven release configuration.
 
 ## (1.6.1,) 2013-12-03:
 

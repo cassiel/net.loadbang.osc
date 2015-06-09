@@ -13,7 +13,7 @@ import net.loadbang.osc.data.Message;
 public interface MessageConsumer {
 	/** Consume a message (which may be part of a bundle).
 
-		@param InetSocketAddress the source of the message
+		@param source the source of the message
  		@param timestamp00 the timestamp as a Date; we pass null for "now"
  		@param message the message
 	 */
