@@ -1,5 +1,9 @@
 `-*- word-wrap: t; -*-`
 
+## 1.6.2, 2015-06-09:
+
+Bumped dependencies.
+
 ## (1.6.1,) 2013-12-03:
 
 Fixes to `pom.xml` to get the project into the central Maven repo. Also added to Travis CI.
